@@ -1,0 +1,19 @@
+routes:
+
+collections:
+  /:
+    permalink: /{slug}/
+    template:
+      - index
+    filter: featured:false
+    data:
+      featured:
+        resource: posts
+        type: browse
+        include: authors,tags
+        filter: featured:true
+        limit: 3
+
+taxonomies:
+  tag: /tag/{slug}/
+  author: /author/{slug}/
